@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lifecycleHook';
+  inputText: string = '';
+  destroy: boolean = true;
+  isDestoryBtnVisible: boolean = true;
+  onSubmit(inputEl : HTMLInputElement){
+    this.inputText= inputEl.value;
+  }
+  
+
+  onDestroy(){
+    this.destroy=false;
+  }
+
+
+  
 }
